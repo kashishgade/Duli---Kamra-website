@@ -184,15 +184,10 @@ h3{font-family:'Jost',sans-serif;font-weight:500;font-size:1.02rem;letter-spacin
   .step{padding-block:1.05rem}
   .step h3{font-size:1rem}
   .statline>div{padding-block:.8rem}
-
   /* services: title list stays, the detail panel opens on demand */
   .opanel p{font-size:1.02rem}
   .opanel ul li{line-height:1.9}
-
-  /* palette: two columns reads better than three at this width */
-  .swatches{grid-template-columns:repeat(2,1fr)}
 }
-
 
 /* ===== PROJECT VIEWER ===== */
 .hcard{cursor:pointer}
@@ -673,9 +668,12 @@ body.menu .mnav a:nth-child(6){transition-delay:.25s}
   .scene{height:340vh}
   .inset{inset:10px}
   .copy{bottom:9.5rem}
-  .copy h1{font-size:1.62rem;line-height:1.3;max-width:17ch}
   .copy .eyebrow{display:none}
-  .copy .who{font-size:.98rem;margin-top:1rem}
+  .copy h1{display:none}
+  .cline{opacity:0;transform:none;transition:none}
+  .cline[data-c="1"],.cline[data-c="2"]{display:none}
+  .cline[data-c="0"]{display:block;position:relative;opacity:1}
+  .copy .who{font-size:.98rem;margin-top:0}
   .copy .role{font-size:.55rem;letter-spacing:.2em}
   .pl-city{font-size:1.9rem;letter-spacing:.2em}
   .pl-co{display:none}
@@ -720,20 +718,23 @@ body.menu .mnav a:nth-child(6){transition-delay:.25s}
   .oh b{font-size:.98rem}
   .obox{padding:1.2rem;min-height:0}
   .opanel p{font-size:.96rem}
-  .swatches{grid-template-columns:repeat(2,1fr)}
+  .mats .wrap{width:min(1200px,90vw)}
+  .swatches{grid-template-columns:repeat(3,1fr);margin-top:1.8rem}
+  .sw{padding:.6rem}
+  .sw b{font-size:.6rem;letter-spacing:.14em}
   .cta{width:100%;text-align:center;padding-inline:1rem}
   .foot{flex-direction:column;gap:.5rem;text-align:center;align-items:center}
   .det{font-size:.9rem;line-height:2}
 }
 
 @media(max-width:420px){
-  .copy h1{font-size:1.46rem;max-width:15ch}
   .pl-city{font-size:1.6rem}
   .switch .wrap{gap:.7rem}
   .sw-btn b{font-size:.64rem;letter-spacing:.12em}
   .stmt-copy p{font-size:1.34rem}
   h2.display{font-size:1.5rem}
   .hcard{width:82vw}
+  .swatches{grid-template-columns:repeat(2,1fr)}
 }
 
 /* stop the pinned sections fighting touch scrolling */
@@ -1141,54 +1142,65 @@ body.menu .mnav a:nth-child(6){transition-delay:.25s}
       </div>
       <article class="hcard" data-home="shillong" tabindex="0">
         <div class="im"><img src="Shilong photos/LAM-8503.JPG" alt="Shillong home"></div>
-        <div class="hcap"><b>Shillong</b><span>Living room</span></div>
-      </article>
-      <article class="hcard" data-home="shillong" tabindex="0">
-        <div class="im"><img src="Shilong photos/LAM-8482.JPG" alt="Shillong home"></div>
-        <div class="hcap"><b>Shillong</b><span>Kitchen</span></div>
-      </article>
-      <article class="hcard" data-home="shillong" tabindex="0">
-        <div class="im"><img src="Shilong photos/LAM-8477.JPG" alt="Shillong home"></div>
-        <div class="hcap"><b>Shillong</b><span>Bedroom</span></div>
-      </article>
-      <article class="hcard" data-home="shillong" tabindex="0">
-        <div class="im"><img src="Shilong photos/LAM-8473.JPG" alt="Shillong home"></div>
-        <div class="hcap"><b>Shillong</b><span>Dining</span></div>
+        <div class="hcap"><b>Shillong</b><span>4 photos</span></div>
       </article>
       <article class="hcard" data-home="delhi" tabindex="0">
-        <div class="im"><img src="Delhi photos/photo-1.jpg" alt="Delhi home"></div>
-        <div class="hcap"><b>Delhi</b><span>Living room</span></div>
-      </article>
-      <article class="hcard" data-home="delhi" tabindex="0">
-        <div class="im"><img src="Delhi photos/photo-2.jpg" alt="Delhi home"></div>
-        <div class="hcap"><b>Delhi</b><span>Kitchen</span></div>
-      </article>
-      <article class="hcard" data-home="delhi" tabindex="0">
-        <div class="im"><img src="Delhi photos/photo-3.jpg" alt="Delhi home"></div>
-        <div class="hcap"><b>Delhi</b><span>Bedroom</span></div>
-      </article>
-      <article class="hcard" data-home="delhi" tabindex="0">
-        <div class="im"><img src="Delhi photos/photo-4.jpg" alt="Delhi home"></div>
-        <div class="hcap"><b>Delhi</b><span>Dining</span></div>
-      </article>
-      <article class="hcard" data-home="london" tabindex="0">
-        <div class="im"><img src="London photos/london-1.jpg" alt="London home"></div>
-        <div class="hcap"><b>London</b><span>Living room</span></div>
-      </article>
-      <article class="hcard" data-home="london" tabindex="0">
-        <div class="im"><img src="London photos/london-2.jpg" alt="London home"></div>
-        <div class="hcap"><b>London</b><span>Kitchen</span></div>
-      </article>
-      <article class="hcard" data-home="london" tabindex="0">
-        <div class="im"><img src="London photos/london-3.jpg" alt="London home"></div>
-        <div class="hcap"><b>London</b><span>Bedroom</span></div>
+        <div class="im"><img src="Delhi photos/IMG_3581_2.jpg" alt="Delhi home"></div>
+        <div class="hcap"><b>Delhi</b><span>4 photos</span></div>
       </article>
       <article class="hcard" data-home="london" tabindex="0">
         <div class="im"><img src="London photos/london-4.jpg" alt="London home"></div>
-        <div class="hcap"><b>London</b><span>Dining</span></div>
+        <div class="hcap"><b>London</b><span>4 photos</span></div>
       </article>
     </div>
     <div class="hbar"><i id="hbar"></i></div>
+  </div>
+
+  <!-- Extra photos for each home: not shown in the scroller, only used by the lightbox viewer when a city card above is clicked -->
+  <div style="display:none" aria-hidden="true">
+    <article class="hcard" data-home="shillong" tabindex="-1">
+      <div class="im"><img src="Shilong photos/LAM-8482.JPG" alt="Shillong home"></div>
+      <div class="hcap"><b>Shillong</b><span>Kitchen</span></div>
+    </article>
+
+    <article class="hcard" data-home="shillong" tabindex="-1">
+      <div class="im"><img src="Shilong photos/LAM-8477.JPG" alt="Shillong home"></div>
+      <div class="hcap"><b>Shillong</b><span>Bedroom</span></div>
+    </article>
+
+    <article class="hcard" data-home="shillong" tabindex="-1">
+      <div class="im"><img src="Shilong photos/LAM-8473.JPG" alt="Shillong home"></div>
+      <div class="hcap"><b>Shillong</b><span>Dining</span></div>
+    </article>
+
+    <article class="hcard" data-home="delhi" tabindex="-1">
+      <div class="im"><img src="Delhi photos/IMG_5222_2.jpg" alt="Delhi home"></div>
+      <div class="hcap"><b>Delhi</b><span>Kitchen</span></div>
+    </article>
+
+    <article class="hcard" data-home="delhi" tabindex="-1">
+      <div class="im"><img src="Delhi photos/IMG_7040_2.jpg" alt="Delhi home"></div>
+      <div class="hcap"><b>Delhi</b><span>Dining</span></div>
+
+      <article class="hcard" data-home="delhi" tabindex="-1">
+        <div class="im"><img src="Delhi photos/photo-3.jpg" alt="Delhi home"></div>
+        <div class="hcap"><b>Delhi</b><span>Dining</span></div>
+    </article>
+    <article class="hcard" data-home="london" tabindex="-1">
+      <div class="im"><img src="London photos/london-2.jpg" alt="London home"></div>
+      <div class="hcap"><b>London</b><span>Kitchen</span></div>
+    </article>
+
+    <article class="hcard" data-home="london" tabindex="-1">
+      <div class="im"><img src="London photos/london-1.jpg" alt="London home"></div>
+      <div class="hcap"><b>London</b><span>Bedroom</span></div>
+    </article>
+
+    <article class="hcard" data-home="london" tabindex="-1">
+      <div class="im"><img src="London photos/london-3.jpg" alt="London home"></div>
+      <div class="hcap"><b>London</b><span>Dining</span></div>
+    </article>
+
   </div>
 </section>
 
